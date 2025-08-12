@@ -21,4 +21,11 @@ class UrlController extends Controller
 
         return Response()->json([$url], 201);
     }
+
+    public function show(string $shorten): JsonResponse
+    {
+        $url = Url::where('shorten', $shorten)->firstOrFail();
+
+        return Response()->json([$url], 200);
+    }
 }

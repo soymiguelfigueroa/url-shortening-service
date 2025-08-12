@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/url', [UrlController::class, 'store'])->name('url.create');
+Route::get('/url/{shorten}', [UrlController::class, 'show'])->name('url.create');
