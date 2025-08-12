@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StatsController;
 use App\Http\Controllers\UrlController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -12,3 +13,5 @@ Route::post('/url', [UrlController::class, 'store'])->name('url.create');
 Route::get('/url/{shorten}', [UrlController::class, 'show'])->name('url.create');
 Route::put('/url/{shorten}', [UrlController::class, 'update'])->name('url.update');
 Route::delete('/url/{shorten}', [UrlController::class, 'destroy'])->name('url.destroy');
+
+Route::get('/url/{shorten}/stats', [StatsController::class, 'showStats'])->name('url.showStats');
