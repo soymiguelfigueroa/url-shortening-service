@@ -28,4 +28,17 @@ class UrlController extends Controller
 
         return Response()->json([$url], 200);
     }
+
+    public function update(string $shorten, Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'url' => 'required|url'
+        ]);
+        
+        $url = Url::where('shorten', $shorten)->firstOrFail();
+        $url->url = $validated['url'];
+        $url->update();
+
+        return Response()->json([$url], 200);
+    }
 }
