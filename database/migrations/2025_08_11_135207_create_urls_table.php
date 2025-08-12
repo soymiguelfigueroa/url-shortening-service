@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('url');
             $table->string('shorten');
-            $table->integer('access_count')->nullable();
+            $table->integer('access_count')->default(0);
             $table->timestamps();
         });
     }

@@ -10,6 +10,7 @@ class Url extends Model
     protected $fillable = [
         'url',
         'shorten',
+        'access_count',
     ];
 
     public function setShortenUrl(): void
