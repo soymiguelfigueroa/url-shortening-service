@@ -43,4 +43,12 @@ class UrlController extends Controller
 
         return Response()->json([$url], 200);
     }
+
+    public function destroy(string $shorten): JsonResponse
+    {
+        $url = Url::where('shorten', $shorten)->firstOrFail();
+        $url->delete();
+
+        return Response()->json([], 204);
+    }
 }

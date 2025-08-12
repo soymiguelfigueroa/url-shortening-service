@@ -11,3 +11,4 @@ Route::get('/user', function (Request $request) {
 Route::post('/url', [UrlController::class, 'store'])->name('url.create');
 Route::get('/url/{shorten}', [UrlController::class, 'show'])->name('url.create');
 Route::put('/url/{shorten}', [UrlController::class, 'update'])->name('url.update');
+Route::delete('/url/{shorten}', [UrlController::class, 'destroy'])->name('url.destroy');
